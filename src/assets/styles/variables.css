@@ -1,0 +1,13 @@
+:root {
+  --ink: #0f1219;
+  --ink-soft: #161b24;
+  --ink-card: #1a2029;
+  --paper: #edeae2;
+  --muted: #8b92a3;
+  --teal: #5fb8a6;
+  --amber: #e8a33d;
+  --line: #262b36;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'DM Sans', sans-serif;
+  --nav-height: 64px;
+}

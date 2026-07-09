@@ -1,0 +1,45 @@
+﻿JUAN FELIPE RUIZ GALVIS 
+Senior Ruby on Rails Engineer
+Bogota , Colombia 
+Phone number:: +57 3114768402 
+E-mail: juanfrg2001@gmail.com 
+GitHub: https://github.com/juanfrg2001 
+Linkedin : www.linkedin.com/in/jfruizg 
+PROFESSIONAL PROFILE
+Systems Engineer and Senior Ruby on Rails Specialist with 4+ years of experience. Expert in stabilizing mature codebases, reducing technical debt, and optimizing high-traffic applications for production reliability. Proven track record in infrastructure management, executing complex migrations (Heroku to DigitalOcean) and modern deployment workflows using Kamal and Capistrano. Bilingual professional (English B2) committed to Clean Code (SOLID) and TDD.
+TECHNICAL SKILLS: 
+* Back-end: Ruby on Rails (Expert), RSpec, TDD, Sidekiq, RESTful APIs.
+* Infrastructure & DevOps: Kamal, Capistrano, Nginx, Passenger, Heroku, AWS (S3, EC2), DigitalOcean, Docker, CI/CD.
+* Databases: PostgreSQL (Advanced Optimization & Query Tuning), Redis.
+* Front-end: JavaScript, Vue.js, React, Tailwind CSS, Bootstrap.
+PROFESSIONAL EXPERIENCE
+Vista Higher Learning | Backend Engineer o Ruby on Rails Engineer. Sep 2024 – Present
+* Architected and developed a robust Google API integration as a core contributor, implementing custom rate-limiting mechanisms and comprehensive error handling to ensure system reliability and prevent third-party disruptions.
+* Spearheaded the refactoring of complex legacy logic using TDD and RSpec, drastically reducing technical debt and increasing overall system stability for high-traffic environments.
+* Optimized application performance by resolving critical N+1 query bottlenecks in PostgreSQL, significantly reducing response times and improving the end-user experience.
+* Ensured production stability by actively participating in technical support, successfully troubleshooting complex production issues and maintaining 24/7 system reliability.
+* Navigated an English-first environment, utilizing English daily for cross-functional communication, technical documentation, and code reviews.
+Cuatro Punto Cero | FullStack Developer Feb 2023 – Jan 2025
+* Architected and delivered custom B2B/B2C solutions from scratch using Ruby on Rails 7, successfully launching scalable E-commerce platforms, CRMs, and customized management systems that streamlined client business operations.
+* Engineered critical database optimizations, slashing query execution times from 20 seconds to 1 second and achieving a 95% improvement in platform load times.
+* Built and maintained CI/CD pipelines and robust deployment infrastructures, executing seamless production releases using Kamal, Capistrano, Nginx, and Passenger.
+* Expanded product capabilities by developing cross-platform mobile applications using Flutter, ensuring robust performance and seamless integration with backend APIs.
+* Acted as a technical partner for stakeholders, translating complex business needs into actionable technical specifications while providing continuous production support and proactively reducing legacy technical debt.
+Squadraapp | Fullstack Developer Jun 2023 – Sep 2024
+* Spearheaded the technical direction of a specialized SaaS management platform designed to optimize complex operational processes and workflows for architectural firms.
+* Architected and executed a seamless, end-to-end infrastructure and database migration from Heroku to DigitalOcean, efficiently provisioning cloud resources while optimizing monthly deployment costs.
+* Eliminated critical performance bottlenecks by extensively restructuring system architecture and resolving complex N+1 database queries, ensuring high scalability under heavy load.
+* Engineered cutting-edge AI capabilities by integrating OpenAI’s GPT API, automating manual platform workflows and elevating the product's overall value proposition.
+* Integrated mission-critical third-party services, including secure payment architectures (Stripe), robust user analytics (Mixpanel), and Google APIs, empowering stakeholders with data-driven business insights.
+Hogaru | Software Developer Oct 2021 – Feb 2023
+Junior Ruby on Rails Developer (Jul 2022 – Feb 2023)
+* Earned rapid promotion from Support Engineer to the core development team within 9 months by consistently resolving critical production issues and optimizing PostgreSQL databases for efficient query performance.
+* Engineered full-stack functionalities following strict MVC architecture and Clean Code principles, successfully automating internal business processes to significantly reduce manual tasks and streamline operations.
+* Integrated Google APIs to extract and analyze marketing campaign data, empowering the growth team with data-driven decision-making capabilities.
+* Managed cloud infrastructure and optimized platform performance using Heroku and AWS, ensuring stable deployments and high availability.
+* Built responsive front-end interfaces using JavaScript, Bulma, and Slim, collaborating seamlessly in an Agile (SCRUM) environment to deliver high-impact features on time.
+EDUCATION:
+Systems Engineering Universidad El Bosque | Bogotá, Colombia
+LANGUAGES & SOFT SKILLS:
+Languages: English (B2 - Professional Working Proficiency), Spanish (Native)
+Soft Skills: Problem Solving in Production, Team Collaboration, Adaptability, Clean Code Mindset.

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Tu Nombre] — Senior Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1219;
+    --ink-soft:#161B24;
+    --ink-card:#1A2029;
+    --paper:#EDEAE2;
+    --muted:#8B92A3;
+    --teal:#5FB8A6;
+    --amber:#E8A33D;
+    --line:#262B36;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'Inter', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--teal); color:var(--ink);}
+
+  a{color:var(--teal); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .wrap{max-width:860px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- top status bar ---------- */
+  .statusbar{
+    border-bottom:1px solid var(--line);
+    background:var(--ink-soft);
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  .statusbar .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top:12px; padding-bottom:12px; flex-wrap:wrap; gap:8px;
+  }
+  .statusbar .dot{color:var(--teal);}
+  .statusbar span.hl{color:var(--paper);}
+
+  /* ---------- hero ---------- */
+  .hero{padding:96px 0 72px;}
+  .hero .prompt{
+    font-family:var(--mono);
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:18px;
+  }
+  .hero .prompt .sym{color:var(--teal);}
+  .hero h1{
+    font-family:var(--sans);
+    font-weight:800;
+    font-size:clamp(34px, 5.2vw, 54px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    max-width:14ch;
+  }
+  .hero h1 .type-cursor{
+    display:inline-block;
+    width:.55ch;
+    background:var(--amber);
+    animation:blink 1s steps(1) infinite;
+    margin-left:2px;
+  }
+  @keyframes blink{50%{opacity:0;}}
+  .hero p.role{
+    font-family:var(--mono);
+    color:var(--amber);
+    font-size:15px;
+    margin-top:18px;
+    letter-spacing:.02em;
+  }
+  .hero p.pitch{
+    margin-top:22px;
+    max-width:56ch;
+    color:var(--muted);
+    font-size:17px;
+  }
+  .hero p.pitch b{color:var(--paper); font-weight:600;}
+  .cta-row{display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono);
+    font-size:13.5px;
+    padding:13px 20px;
+    border-radius:6px;
+    border:1px solid var(--line);
+    display:inline-flex; align-items:center; gap:8px;
+    transition:border-color .15s, background .15s;
+  }
+  .btn:hover{text-decoration:none;}
+  .btn-primary{background:var(--teal); color:var(--ink); font-weight:600; border-color:var(--teal);}
+  .btn-primary:hover{background:#72c7b5;}
+  .btn-ghost{color:var(--paper); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--teal); color:var(--teal);}
+
+  /* ---------- section label ---------- */
+  .label{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    margin-bottom:22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .label::before{content:'//'; color:var(--amber);}
+
+  section{padding:64px 0; border-top:1px solid var(--line);}
+  h2.title{
+    font-size:26px; font-weight:700; letter-spacing:-0.01em; margin-bottom:8px;
+  }
+  .section-intro{color:var(--muted); max-width:56ch; margin-bottom:36px; font-size:15.5px;}
+
+  /* ---------- stack ---------- */
+  .stack-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .stack-cat{background:var(--ink-card); padding:22px;}
+  .stack-cat h3{
+    font-family:var(--mono); font-size:12px; color:var(--amber);
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px;
+  }
+  .stack-cat ul{list-style:none;}
+  .stack-cat li{
+    font-size:14.5px; color:var(--paper); padding:4px 0;
+    display:flex; align-items:center; gap:8px;
+  }
+  .stack-cat li::before{content:'▸'; color:var(--teal); font-size:11px;}
+
+  /* ---------- problems ---------- */
+  .problem-list{display:flex; flex-direction:column; gap:18px;}
+  .problem{
+    background:var(--ink-card);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:22px 24px;
+    display:flex; gap:18px;
+  }
+  .problem .num{
+    font-family:var(--mono); color:var(--amber); font-size:13px; flex-shrink:0; padding-top:2px;
+  }
+  .problem h3{font-size:16.5px; font-weight:600; margin-bottom:6px;}
+  .problem p{color:var(--muted); font-size:14.5px;}
+
+  /* ---------- how i work ---------- */
+  .work-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;}
+  .work-card{padding:0;}
+  .work-card .k{font-family:var(--mono); font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em;}
+  .work-card .v{font-size:17px; font-weight:600; margin-top:6px;}
+  .work-card .d{font-size:14px; color:var(--muted); margin-top:6px;}
+
+  /* ---------- changelog / experience ---------- */
+  .changelog{border-left:1px solid var(--line); margin-left:6px;}
+  .entry{position:relative; padding:0 0 40px 28px;}
+  .entry:last-child{padding-bottom:0;}
+  .entry::before{
+    content:''; position:absolute; left:-5.5px; top:4px;
+    width:10px; height:10px; border-radius:50%;
+    background:var(--ink); border:2px solid var(--teal);
+  }
+  .entry .tag{
+    display:inline-block; font-family:var(--mono); font-size:12px;
+    color:var(--ink); background:var(--amber); padding:2px 8px; border-radius:4px;
+    font-weight:600; margin-bottom:10px;
+  }
+  .entry .when{font-family:var(--mono); font-size:12.5px; color:var(--muted); margin-left:10px;}
+  .entry h3{font-size:17px; font-weight:700;}
+  .entry .role{font-size:14px; color:var(--teal); margin-top:2px; margin-bottom:10px;}
+  .entry ul{padding-left:18px; color:var(--muted); font-size:14.5px; display:flex; flex-direction:column; gap:6px;}
+
+  /* ---------- case studies ---------- */
+  .case{
+    background:var(--ink-card); border:1px solid var(--line); border-radius:8px;
+    padding:26px 26px 24px; margin-bottom:20px;
+  }
+  .case-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:10px;}
+  .case-head h3{font-size:18px; font-weight:700;}
+  .case-ver{font-family:var(--mono); font-size:12px; color:var(--muted);}
+  .case p.desc{color:var(--muted); font-size:14.5px; margin-bottom:14px;}
+  .case .metrics{display:flex; gap:26px; flex-wrap:wrap;}
+  .case .metric b{display:block; font-size:20px; color:var(--teal); font-family:var(--mono);}
+  .case .metric span{font-size:12.5px; color:var(--muted);}
+  .case .tags{margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;}
+  .case .tags span{
+    font-family:var(--mono); font-size:11.5px; color:var(--paper);
+    border:1px solid var(--line); padding:3px 9px; border-radius:20px;
+  }
+
+  /* ---------- contact ---------- */
+  .contact{text-align:left; padding-bottom:110px;}
+  .contact h2{font-size:30px; font-weight:800; max-width:16ch; margin-bottom:14px;}
+  .contact p{color:var(--muted); max-width:50ch; margin-bottom:30px; font-size:15.5px;}
+  .contact-links{display:flex; gap:14px; flex-wrap:wrap;}
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 0; font-family:var(--mono);
+    font-size:12px; color:var(--muted); text-align:center;
+  }
+
+  @media(max-width:640px){
+    .hero{padding:64px 0 48px;}
+    section{padding:48px 0;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="statusbar">
+    <div class="wrap">
+      <span><span class="dot">●</span> <span class="hl">available</span> — part-time / async (15–20 hrs/week)</span>
+      <span>GMT-5 (Colombia) · overlaps US &amp; LATAM business hours</span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="prompt"><span class="sym">$</span> whoami</div>
+      <h1 id="typed-name">[Tu Nombre]<span class="type-cursor"></span></h1>
+      <p class="role">SENIOR FULL-STACK DEVELOPER · RAILS / VUE / FLUTTER</p>
+      <p class="pitch">
+        I build and ship production software for startups and small teams —
+        <b>MVPs, backend scaling, and legacy-Rails upgrades</b> — working async,
+        in English, from Colombia. 5+ years shipping with Rails, Vue.js, Flutter and Docker/Kamal deploys.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:tu@email.com">→ Book an intro call</a>
+        <a class="btn btn-ghost" href="#work">See selected work</a>
+        <a class="btn btn-ghost" href="/resume.pdf">Download resume</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="stack">
+    <div class="wrap">
+      <div class="label">stack</div>
+      <h2 class="title">What I build with</h2>
+      <p class="section-intro">Production-grade tools I use daily — not a skills list I copied from a job post.</p>
+      <div class="stack-grid">
+        <div class="stack-cat">
+          <h3>Backend</h3>
+          <ul><li>Ruby on Rails</li><li>PostgreSQL</li><li>MySQL</li></ul>
+        </div>
+        <div class="stack-cat">
+          <h3>Frontend</h3>
+          <ul><li>Vue.js</li><li>JavaScript</li><li>HTML / CSS</li></ul>
+        </div>
+        <div class="stack-cat">
+          <h3>Mobile</h3>
+          <ul><li>Flutter</li></ul>
+        </div>
+        <div class="stack-cat">
+          <h3>Infra / DevOps</h3>
+          <ul><li>Docker</li><li>Kamal</li><li>Nginx</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problems">
+    <div class="wrap">
+      <div class="label">what-i-solve</div>
+      <h2 class="title">Problems I get called in for</h2>
+      <p class="section-intro">The kind of work that usually gets stuck without a senior hand on it.</p>
+      <div class="problem-list">
+        <div class="problem">
+          <div class="num">01</div>
+          <div><h3>MVP from zero to shipped</h3>
+          <p>Take a product idea straight to a working, deployable Rails + Vue (or Flutter) app — without over-engineering it before you have paying users.</p></div>
+        </div>
+        <div class="problem">
+          <div class="num">02</div>
+          <div><h3>Rescuing a slow or fragile Rails app</h3>
+          <p>Query optimization, caching, background jobs, and cleanup of years of accumulated technical debt — without a risky full rewrite.</p></div>
+        </div>
+        <div class="problem">
+          <div class="num">03</div>
+          <div><h3>Migrating deploys to Docker + Kamal</h3>
+          <p>Move off expensive PaaS hosting (Heroku, etc.) onto your own infrastructure with reproducible, versioned deploys.</p></div>
+        </div>
+        <div class="problem">
+          <div class="num">04</div>
+          <div><h3>Backlog burn-down</h3>
+          <p>A dedicated block of hours per week to just clear tickets — bugs, small features, integrations — while your core team stays focused on the roadmap.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="label">how-i-work</div>
+      <h2 class="title">How engagements work</h2>
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="k">Availability</div>
+          <div class="v">15–20 hrs / week</div>
+          <div class="d">Part-time, alongside a full-time role — reliable, consistent hours every week.</div>
+        </div>
+        <div class="work-card">
+          <div class="k">Format</div>
+          <div class="v">Async-first</div>
+          <div class="d">Daily written updates, weekly call. Works well across time zones.</div>
+        </div>
+        <div class="work-card">
+          <div class="k">Pricing</div>
+          <div class="v">Hourly or retainer</div>
+          <div class="d">Monthly hour packages available for ongoing work. Rates in USD.</div>
+        </div>
+        <div class="work-card">
+          <div class="k">Payments</div>
+          <div class="v">Deel / Wise / Payoneer</div>
+          <div class="d">No friction for US or LATAM clients — I handle my own tax/compliance side.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="label">selected-work</div>
+      <h2 class="title">Case studies</h2>
+      <p class="section-intro">Replace these with 2–3 real projects. Keep the format: one clear problem, what you did, a measurable result.</p>
+
+      <div class="case">
+        <div class="case-head">
+          <h3>[Project name / client type]</h3>
+          <span class="case-ver">v1.0 · 2025</span>
+        </div>
+        <p class="desc">[One sentence: what the client needed and the constraint they were under — e.g. "A seed-stage marketplace needed a working MVP in 6 weeks before their next investor call."]</p>
+        <div class="metrics">
+          <div class="metric"><b>6 wks</b><span>idea → live MVP</span></div>
+          <div class="metric"><b>0→1</b><span>paying customers enabled</span></div>
+          <div class="metric"><b>100%</b><span>on-time delivery</span></div>
+        </div>
+        <div class="tags"><span>Rails</span><span>Vue.js</span><span>PostgreSQL</span><span>Docker</span></div>
+      </div>
+
+      <div class="case">
+        <div class="case-head">
+          <h3>[Project name / client type]</h3>
+          <span class="case-ver">v1.1 · 2025</span>
+        </div>
+        <p class="desc">[e.g. "Migrated a legacy Rails 6 app off Heroku to Docker + Kamal, cutting hosting costs and deploy time."]</p>
+        <div class="metrics">
+          <div class="metric"><b>-40%</b><span>hosting cost</span></div>
+          <div class="metric"><b>3x</b><span>faster deploys</span></div>
+          <div class="metric"><b>0</b><span>downtime incidents</span></div>
+        </div>
+        <div class="tags"><span>Kamal</span><span>Nginx</span><span>Docker</span></div>
+      </div>
+
+      <div class="case">
+        <div class="case-head">
+          <h3>[Project name / client type]</h3>
+          <span class="case-ver">v1.2 · 2026</span>
+        </div>
+        <p class="desc">[e.g. "Built a companion Flutter app for an existing Rails product, sharing the same API."]</p>
+        <div class="metrics">
+          <div class="metric"><b>2</b><span>platforms shipped</span></div>
+          <div class="metric"><b>4.7★</b><span>app store rating</span></div>
+        </div>
+        <div class="tags"><span>Flutter</span><span>Rails API</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="label">changelog</div>
+      <h2 class="title">Experience</h2>
+      <div class="changelog">
+        <div class="entry">
+          <span class="tag">v3.0</span><span class="when">2023 — Present</span>
+          <h3>[Current role / freelance]</h3>
+          <div class="role">[Company or "Independent"]</div>
+          <ul>
+            <li>[Key responsibility or outcome]</li>
+            <li>[Key responsibility or outcome]</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <span class="tag">v2.0</span><span class="when">20XX — 20XX</span>
+          <h3>[Previous role]</h3>
+          <div class="role">[Company]</div>
+          <ul>
+            <li>[Key responsibility or outcome]</li>
+            <li>[Key responsibility or outcome]</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <span class="tag">v1.0</span><span class="when">20XX — 20XX</span>
+          <h3>[Earlier role]</h3>
+          <div class="role">[Company]</div>
+          <ul>
+            <li>[Key responsibility or outcome]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="label">contact</div>
+      <h2>Have a backlog that needs an extra pair of senior hands?</h2>
+      <p>I reply within 24 hours. Fastest way to start is a 20-minute intro call to see if it's a fit — no pitch deck required.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:tu@email.com">✉ tu@email.com</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/tu-usuario" target="_blank">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://calendly.com/tu-usuario" target="_blank">Calendly</a>
+        <a class="btn btn-ghost" href="https://github.com/tu-usuario" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    // built with Rails, Vue &amp; a lot of coffee — last deployed 2026
+  </footer>
+
+</body>
+</html>
