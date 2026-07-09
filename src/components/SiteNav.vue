@@ -1,13 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 import { portfolioConfig } from '../data/portfolio.js'
+import { LOCALES } from '../i18n/locales.js'
 
 defineProps({
   t: { type: Object, required: true },
   lang: { type: String, required: true },
 })
 
-const emit = defineEmits(['toggle-lang'])
+const emit = defineEmits(['set-lang'])
 
 const menuOpen = ref(false)
 
@@ -24,6 +25,10 @@ const navItems = [
 function closeMenu() {
   menuOpen.value = false
 }
+
+function selectLang(code) {
+  emit('set-lang', code)
+}
 </script>
 
 <template>
@@ -38,14 +43,22 @@ function closeMenu() {
       </ul>
 
       <div class="nav-actions">
-        <button
-          class="lang-toggle"
-          :class="{ active: lang === 'es' }"
-          :aria-label="lang === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'"
-          @click="emit('toggle-lang')"
+        <div
+          class="lang-switch"
+          role="group"
+          :aria-label="t.ui.selectLanguage"
         >
-          {{ lang === 'en' ? 'ES' : 'EN' }}
-        </button>
+          <button
+            v-for="code in LOCALES"
+            :key="code"
+            class="lang-btn"
+            :class="{ active: lang === code }"
+            :aria-pressed="lang === code"
+            @click="selectLang(code)"
+          >
+            {{ code.toUpperCase() }}
+          </button>
+        </div>
         <a
           class="btn btn-primary nav-cta"
           :href="`mailto:${portfolioConfig.email}`"
@@ -54,7 +67,7 @@ function closeMenu() {
         </a>
         <button
           class="nav-toggle"
-          :aria-label="menuOpen ? 'Close menu' : 'Open menu'"
+          :aria-label="menuOpen ? t.ui.closeMenu : t.ui.openMenu"
           @click="menuOpen = !menuOpen"
         >
           {{ menuOpen ? '✕' : '☰' }}

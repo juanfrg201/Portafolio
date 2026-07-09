@@ -73,7 +73,7 @@ function hasLinks(app) {
                 :key="index"
                 class="app-gallery-dot"
                 :class="{ active: (slideIndex[app.id] ?? 0) === index }"
-                :aria-label="`Screenshot ${index + 1}`"
+                :aria-label="`${t.ui.screenshot} ${index + 1}`"
                 @click="setSlide(app.id, index)"
               />
             </div>

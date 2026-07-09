@@ -1,21 +1,24 @@
 import { ref, computed, watch } from 'vue'
 import { content } from '../data/portfolio.js'
-
-const STORAGE_KEY = 'portfolio-lang'
+import { getDefaultLocale, STORAGE_KEY } from '../i18n/locales.js'
+import { updateDocumentMeta } from '../i18n/document.js'
 
 export function useLanguage() {
-  const lang = ref(localStorage.getItem(STORAGE_KEY) || 'en')
+  const lang = ref(getDefaultLocale())
 
   const t = computed(() => content[lang.value])
 
-  watch(lang, (value) => {
-    localStorage.setItem(STORAGE_KEY, value)
-    document.documentElement.lang = value === 'es' ? 'es' : 'en'
-    document.title = content[value].meta.title
-  }, { immediate: true })
+  watch(
+    lang,
+    (value) => {
+      localStorage.setItem(STORAGE_KEY, value)
+      updateDocumentMeta(value, content[value].meta)
+    },
+    { immediate: true },
+  )
 
   function setLang(newLang) {
-    lang.value = newLang
+    if (content[newLang]) lang.value = newLang
   }
 
   function toggleLang() {

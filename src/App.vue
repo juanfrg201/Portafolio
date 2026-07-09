@@ -14,13 +14,13 @@ import FaqSection from './components/FaqSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
 
-const { lang, t, toggleLang } = useLanguage()
+const { lang, t, setLang } = useLanguage()
 useScrollReveal()
 </script>
 
 <template>
   <StatusBar :t="t" />
-  <SiteNav :t="t" :lang="lang" @toggle-lang="toggleLang" />
+  <SiteNav :t="t" :lang="lang" @set-lang="setLang" />
   <main>
     <HeroSection :t="t" />
     <StackSection :t="t" />

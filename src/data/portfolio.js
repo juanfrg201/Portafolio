@@ -20,6 +20,13 @@ export const content = {
     meta: {
       title: 'Juan Felipe Ruiz — Senior Ruby on Rails Engineer',
       description: 'Senior Rails engineer for US & LATAM teams. Legacy stabilization, PostgreSQL tuning, Heroku→DigitalOcean migrations, Kamal deploys. Async freelance from Bogotá.',
+      keywords: 'Ruby on Rails developer, freelance Rails, PostgreSQL optimization, Kamal, LATAM developer, remote developer Colombia, Juan Felipe Ruiz',
+    },
+    ui: {
+      screenshot: 'Screenshot',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      selectLanguage: 'Select language',
     },
     statusbar: {
       available: 'available',
@@ -352,6 +359,13 @@ export const content = {
     meta: {
       title: 'Juan Felipe Ruiz — Ingeniero Senior Ruby on Rails',
       description: 'Ingeniero Rails senior para equipos en USA y LATAM. Estabilización de legacy, tuning PostgreSQL, migraciones Heroku→DigitalOcean, deploys con Kamal. Freelance async desde Bogotá.',
+      keywords: 'desarrollador Ruby on Rails, freelance Rails, optimización PostgreSQL, Kamal, desarrollador remoto Colombia, LATAM, Juan Felipe Ruiz',
+    },
+    ui: {
+      screenshot: 'Captura de pantalla',
+      openMenu: 'Abrir menú',
+      closeMenu: 'Cerrar menú',
+      selectLanguage: 'Seleccionar idioma',
     },
     statusbar: {
       available: 'disponible',
