@@ -44,7 +44,7 @@ function initial(name) {
       <h2 class="title">{{ t.apps.title }}</h2>
       <p class="section-intro">{{ t.apps.intro }}</p>
 
-      <div class="apps-grid">
+      <div class="apps-grid stagger">
         <article
           v-for="app in t.apps.items"
           :key="app.id"

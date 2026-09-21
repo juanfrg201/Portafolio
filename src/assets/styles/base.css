@@ -146,15 +146,51 @@ section {
 }
 
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 1;
 }
 
-.fade-in.visible {
+.js .fade-in .label,
+.js .fade-in .title,
+.js .fade-in .section-intro,
+.js .fade-in.contact p,
+.js .stagger > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js .fade-in.visible .label,
+.js .fade-in.visible .title,
+.js .fade-in.visible .section-intro,
+.js .fade-in.visible.contact p,
+.js .fade-in.visible .stagger > * {
   opacity: 1;
   transform: translateY(0);
 }
+
+.js .fade-in.visible .label {
+  transition-delay: 0.04s;
+}
+
+.js .fade-in.visible .title {
+  transition-delay: 0.12s;
+}
+
+.js .fade-in.visible .section-intro,
+.js .fade-in.visible.contact p {
+  transition-delay: 0.2s;
+}
+
+.js .fade-in.visible .stagger > *:nth-child(1) { transition-delay: 0.18s; }
+.js .fade-in.visible .stagger > *:nth-child(2) { transition-delay: 0.26s; }
+.js .fade-in.visible .stagger > *:nth-child(3) { transition-delay: 0.34s; }
+.js .fade-in.visible .stagger > *:nth-child(4) { transition-delay: 0.42s; }
+.js .fade-in.visible .stagger > *:nth-child(5) { transition-delay: 0.5s; }
+.js .fade-in.visible .stagger > *:nth-child(6) { transition-delay: 0.58s; }
+.js .fade-in.visible .stagger > *:nth-child(7) { transition-delay: 0.66s; }
+.js .fade-in.visible .stagger > *:nth-child(8) { transition-delay: 0.74s; }
 
 @media (max-width: 768px) {
   .wrap {
@@ -163,5 +199,26 @@ section {
 
   section {
     padding: var(--space-section-sm) 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .fade-in .label,
+  .js .fade-in .title,
+  .js .fade-in .section-intro,
+  .js .fade-in.contact p,
+  .js .stagger > *,
+  .js .fade-in.visible .label,
+  .js .fade-in.visible .title,
+  .js .fade-in.visible .section-intro,
+  .js .fade-in.visible.contact p,
+  .js .fade-in.visible .stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

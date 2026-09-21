@@ -50,7 +50,7 @@ export const content = {
       pitchBold: ['slow or expensive to keep running'],
       ctaPrimary: 'Hire me',
       ctaResume: 'Download CV',
-      badge: 'Available · 15–20 hrs/week · remote',
+      scrollCue: 'Scroll to get to know me',
       trust: ['4+ years shipping products', 'US company experience', 'English at work every day'],
     },
     stack: {
@@ -394,7 +394,7 @@ export const content = {
       pitchBold: ['lento o caro de mantener'],
       ctaPrimary: 'Contrátame',
       ctaResume: 'Descargar CV',
-      badge: 'Disponible · 15–20 hrs/semana · remoto',
+      scrollCue: 'Baja para conocerme',
       trust: ['4+ años lanzando productos', 'Experiencia en empresa USA', 'Inglés todos los días en el trabajo'],
     },
     stack: {

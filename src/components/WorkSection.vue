@@ -11,7 +11,7 @@ defineProps({
       <h2 class="title">{{ t.work.title }}</h2>
       <p class="section-intro">{{ t.work.intro }}</p>
 
-      <div class="cases-grid">
+      <div class="cases-grid stagger">
         <article v-for="item in t.work.cases" :key="item.title" class="case">
           <div class="case-head">
             <h3>{{ item.title }}</h3>

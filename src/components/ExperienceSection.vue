@@ -10,7 +10,7 @@ defineProps({
       <div class="label">{{ t.experience.label }}</div>
       <h2 class="title">{{ t.experience.title }}</h2>
 
-      <div class="timeline">
+      <div class="timeline stagger">
         <div v-for="entry in t.experience.entries" :key="entry.when + entry.title" class="entry">
           <span class="when">{{ entry.when }}</span>
           <h3>{{ entry.title }}</h3>

@@ -18,7 +18,7 @@ defineProps({
       <h2 class="title">{{ t.problems.title }}</h2>
       <p class="section-intro">{{ t.problems.intro }}</p>
 
-      <div class="services-grid">
+      <div class="services-grid stagger">
         <article
           v-for="item in t.problems.items"
           :key="item.title"

@@ -19,7 +19,7 @@ function toggle(index) {
       <h2 class="title">{{ t.faq.title }}</h2>
       <p class="section-intro">{{ t.faq.intro }}</p>
 
-      <div class="faq-list">
+      <div class="faq-list stagger">
         <div
           v-for="(item, index) in t.faq.items"
           :key="item.q"

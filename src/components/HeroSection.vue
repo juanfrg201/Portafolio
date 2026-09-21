@@ -23,7 +23,6 @@ function formatPitch(text, boldParts) {
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-copy">
-          <span class="hero-badge">{{ t.hero.badge }}</span>
           <p class="hero-eyebrow">{{ t.hero.headline }}</p>
           <h1>
             <span class="hero-kicker">{{ t.hero.display }}</span>
@@ -68,6 +67,11 @@ function formatPitch(text, boldParts) {
               </svg>
             </a>
           </div>
+
+          <a class="hero-scroll-cue" href="#problems">
+            <span>{{ t.hero.scrollCue }}</span>
+            <span class="hero-scroll-cue-mark" aria-hidden="true"></span>
+          </a>
         </div>
 
         <div class="hero-portrait">

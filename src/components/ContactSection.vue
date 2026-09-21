@@ -12,10 +12,10 @@ const whatsappUrl = `https://wa.me/${portfolioConfig.phone.replace(/\D/g, '')}`
   <section id="contact" class="contact fade-in">
     <div class="wrap">
       <div class="label">{{ t.contact.label }}</div>
-      <h2>{{ t.contact.title }}</h2>
+      <h2 class="title">{{ t.contact.title }}</h2>
       <p>{{ t.contact.desc }}</p>
 
-      <div class="contact-links">
+      <div class="contact-links stagger">
         <a class="btn btn-light" :href="`mailto:${portfolioConfig.email}`">
           {{ t.contact.email }}
         </a>

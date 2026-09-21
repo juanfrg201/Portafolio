@@ -13,6 +13,7 @@ const emit = defineEmits(['set-lang'])
 const menuOpen = ref(false)
 const isScrolled = ref(false)
 const activeId = ref('home')
+const scrollProgress = ref(0)
 
 const navItems = [
   { id: 'home', key: 'home' },
@@ -36,6 +37,8 @@ function selectLang(code) {
 
 function onScroll() {
   isScrolled.value = window.scrollY > 40
+  const max = document.documentElement.scrollHeight - window.innerHeight
+  scrollProgress.value = max > 0 ? Math.min(1, window.scrollY / max) : 0
 }
 
 onMounted(() => {
@@ -114,6 +117,9 @@ onUnmounted(() => {
           {{ menuOpen ? '✕' : '☰' }}
         </button>
       </div>
+    </div>
+    <div class="nav-progress" aria-hidden="true">
+      <span :style="{ transform: `scaleX(${scrollProgress})` }"></span>
     </div>
   </nav>
 </template>

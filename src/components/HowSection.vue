@@ -10,7 +10,7 @@ defineProps({
       <div class="label">{{ t.how.label }}</div>
       <h2 class="title">{{ t.how.title }}</h2>
 
-      <div class="work-grid">
+      <div class="work-grid stagger">
         <div v-for="item in t.how.items" :key="item.key" class="work-card">
           <div class="k">{{ item.key }}</div>
           <div class="v">{{ item.value }}</div>
