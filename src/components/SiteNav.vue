@@ -106,6 +106,7 @@ onUnmounted(() => {
           class="btn nav-cta"
           :class="isScrolled ? 'btn-primary' : 'btn-light'"
           :href="portfolioConfig.links.resume"
+          download="JF-CV.pdf"
         >
           {{ t.nav.cv }}
         </a>

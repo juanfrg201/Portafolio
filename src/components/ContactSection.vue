@@ -5,7 +5,41 @@ defineProps({
   t: { type: Object, required: true },
 })
 
-const whatsappUrl = `https://wa.me/${portfolioConfig.phone.replace(/\D/g, '')}`
+const phoneDigits = portfolioConfig.phone.replace(/\D/g, '')
+const whatsappUrl = `https://wa.me/${phoneDigits}`
+
+const items = [
+  {
+    href: portfolioConfig.links.linkedin,
+    label: 'linkedin.com/in/jfruizg',
+    external: true,
+    icon: 'linkedin',
+  },
+  {
+    href: portfolioConfig.links.github,
+    label: 'github.com/juanfrg2001',
+    external: true,
+    icon: 'github',
+  },
+  {
+    href: `mailto:${portfolioConfig.email}`,
+    label: portfolioConfig.email,
+    external: false,
+    icon: 'email',
+  },
+  {
+    href: null,
+    label: portfolioConfig.location,
+    external: false,
+    icon: 'pin',
+  },
+  {
+    href: whatsappUrl,
+    label: portfolioConfig.phone,
+    external: true,
+    icon: 'phone',
+  },
+]
 </script>
 
 <template>
@@ -15,35 +49,24 @@ const whatsappUrl = `https://wa.me/${portfolioConfig.phone.replace(/\D/g, '')}`
       <h2 class="title">{{ t.contact.title }}</h2>
       <p>{{ t.contact.desc }}</p>
 
-      <div class="contact-links stagger">
-        <a class="btn btn-light" :href="`mailto:${portfolioConfig.email}`">
-          {{ t.contact.email }}
-        </a>
-        <a
-          class="btn btn-outline-light"
-          :href="whatsappUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ t.contact.phone }}
-        </a>
-        <a
-          class="btn btn-outline-light"
-          :href="portfolioConfig.links.linkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ t.contact.linkedin }}
-        </a>
-        <a
-          class="btn btn-outline-light"
-          :href="portfolioConfig.links.github"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ t.contact.github }}
-        </a>
-      </div>
+      <ul class="contact-details stagger">
+        <li v-for="item in items" :key="item.label">
+          <a
+            v-if="item.href"
+            class="contact-detail"
+            :href="item.href"
+            :target="item.external ? '_blank' : undefined"
+            :rel="item.external ? 'noopener noreferrer' : undefined"
+          >
+            <span class="contact-detail-icon" :data-icon="item.icon" aria-hidden="true"></span>
+            {{ item.label }}
+          </a>
+          <span v-else class="contact-detail">
+            <span class="contact-detail-icon" :data-icon="item.icon" aria-hidden="true"></span>
+            {{ item.label }}
+          </span>
+        </li>
+      </ul>
     </div>
   </section>
 </template>

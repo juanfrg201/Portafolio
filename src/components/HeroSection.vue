@@ -40,7 +40,11 @@ function formatPitch(text, boldParts) {
             <a class="btn btn-light" :href="`mailto:${portfolioConfig.email}`">
               {{ t.hero.ctaPrimary }}
             </a>
-            <a class="btn btn-outline-light" :href="portfolioConfig.links.resume">
+            <a
+              class="btn btn-outline-light"
+              :href="portfolioConfig.links.resume"
+              download="JF-CV.pdf"
+            >
               {{ t.hero.ctaResume }}
             </a>
           </div>
