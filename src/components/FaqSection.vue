@@ -5,7 +5,7 @@ defineProps({
   t: { type: Object, required: true },
 })
 
-const openIndex = ref(null)
+const openIndex = ref(0)
 
 function toggle(index) {
   openIndex.value = openIndex.value === index ? null : index
@@ -31,7 +31,9 @@ function toggle(index) {
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>{{ item.a }}</p>
+            <div class="faq-answer-inner">
+              <p>{{ item.a }}</p>
+            </div>
           </div>
         </div>
       </div>

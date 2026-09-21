@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { portfolioConfig } from '../data/portfolio.js'
 import { LOCALES } from '../i18n/locales.js'
 
@@ -11,16 +11,20 @@ defineProps({
 const emit = defineEmits(['set-lang'])
 
 const menuOpen = ref(false)
+const isScrolled = ref(false)
+const activeId = ref('home')
 
 const navItems = [
-  { id: 'stack', key: 'stack' },
+  { id: 'home', key: 'home' },
   { id: 'problems', key: 'services' },
-  { id: 'apps', key: 'apps' },
-  { id: 'work', key: 'work' },
+  { id: 'apps', key: 'work' },
+  { id: 'stack', key: 'skills' },
   { id: 'experience', key: 'experience' },
   { id: 'faq', key: 'faq' },
   { id: 'contact', key: 'contact' },
 ]
+
+let sectionObserver = null
 
 function closeMenu() {
   menuOpen.value = false
@@ -29,16 +33,52 @@ function closeMenu() {
 function selectLang(code) {
   emit('set-lang', code)
 }
+
+function onScroll() {
+  isScrolled.value = window.scrollY > 40
+}
+
+onMounted(() => {
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+
+  sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeId.value = entry.target.id
+        }
+      })
+    },
+    { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+  )
+
+  navItems.forEach((item) => {
+    const el = document.getElementById(item.id)
+    if (el) sectionObserver.observe(el)
+  })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+  sectionObserver?.disconnect()
+})
 </script>
 
 <template>
-  <nav class="site-nav">
+  <nav class="site-nav" :class="{ 'is-scrolled': isScrolled, 'menu-open': menuOpen }">
     <div class="wrap">
-      <a href="#" class="nav-brand" @click.prevent>{{ portfolioConfig.name }}</a>
+      <a href="#home" class="nav-brand" @click="closeMenu">Juan.</a>
 
       <ul class="nav-links" :class="{ open: menuOpen }">
         <li v-for="item in navItems" :key="item.id">
-          <a :href="`#${item.id}`" @click="closeMenu">{{ t.nav[item.key] }}</a>
+          <a
+            :href="`#${item.id}`"
+            :class="{ active: activeId === item.id }"
+            @click="closeMenu"
+          >
+            {{ t.nav[item.key] }}
+          </a>
         </li>
       </ul>
 
@@ -60,10 +100,11 @@ function selectLang(code) {
           </button>
         </div>
         <a
-          class="btn btn-primary nav-cta"
-          :href="`mailto:${portfolioConfig.email}`"
+          class="btn nav-cta"
+          :class="isScrolled ? 'btn-primary' : 'btn-light'"
+          :href="portfolioConfig.links.resume"
         >
-          {{ t.nav.cta }}
+          {{ t.nav.cv }}
         </a>
         <button
           class="nav-toggle"

@@ -16,11 +16,11 @@ const whatsappUrl = `https://wa.me/${portfolioConfig.phone.replace(/\D/g, '')}`
       <p>{{ t.contact.desc }}</p>
 
       <div class="contact-links">
-        <a class="btn btn-primary" :href="`mailto:${portfolioConfig.email}`">
+        <a class="btn btn-light" :href="`mailto:${portfolioConfig.email}`">
           {{ t.contact.email }}
         </a>
         <a
-          class="btn btn-ghost"
+          class="btn btn-outline-light"
           :href="whatsappUrl"
           target="_blank"
           rel="noopener noreferrer"
@@ -28,7 +28,7 @@ const whatsappUrl = `https://wa.me/${portfolioConfig.phone.replace(/\D/g, '')}`
           {{ t.contact.phone }}
         </a>
         <a
-          class="btn btn-ghost"
+          class="btn btn-outline-light"
           :href="portfolioConfig.links.linkedin"
           target="_blank"
           rel="noopener noreferrer"
@@ -36,7 +36,7 @@ const whatsappUrl = `https://wa.me/${portfolioConfig.phone.replace(/\D/g, '')}`
           {{ t.contact.linkedin }}
         </a>
         <a
-          class="btn btn-ghost"
+          class="btn btn-outline-light"
           :href="portfolioConfig.links.github"
           target="_blank"
           rel="noopener noreferrer"

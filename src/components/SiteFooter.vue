@@ -6,6 +6,8 @@ defineProps({
 
 <template>
   <footer class="site-footer">
-    {{ t.footer }} — {{ new Date().getFullYear() }}
+    <div class="wrap">
+      {{ t.footer }} — {{ new Date().getFullYear() }}
+    </div>
   </footer>
 </template>

@@ -1,13 +1,23 @@
 :root {
-  --ink: #0f1219;
-  --ink-soft: #161b24;
-  --ink-card: #1a2029;
-  --paper: #edeae2;
-  --muted: #8b92a3;
-  --teal: #5fb8a6;
-  --amber: #e8a33d;
-  --line: #262b36;
-  --mono: 'IBM Plex Mono', monospace;
-  --sans: 'DM Sans', sans-serif;
-  --nav-height: 64px;
+  --forest: #1f5c4b;
+  --forest-deep: #17483b;
+  --forest-soft: #2a6e5a;
+  --cream: #f6f3ee;
+  --cream-dark: #ece6dc;
+  --surface: #ffffff;
+  --ink: #1c2a26;
+  --muted: #5c6b66;
+  --olive: #c4a35a;
+  --line: #e4ded4;
+  --display: 'Fraunces', 'Times New Roman', serif;
+  --sans: 'Outfit', system-ui, sans-serif;
+  --nav-height: 80px;
+  --wrap: 1180px;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+  --shadow: 0 18px 50px rgba(28, 42, 38, 0.07);
+  --shadow-soft: 0 8px 24px rgba(28, 42, 38, 0.05);
+  --space-section: 96px;
+  --space-section-sm: 64px;
 }

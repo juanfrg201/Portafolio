@@ -10,9 +10,8 @@ defineProps({
       <div class="label">{{ t.experience.label }}</div>
       <h2 class="title">{{ t.experience.title }}</h2>
 
-      <div class="changelog">
-        <div v-for="entry in t.experience.entries" :key="entry.tag" class="entry">
-          <span class="tag">{{ entry.tag }}</span>
+      <div class="timeline">
+        <div v-for="entry in t.experience.entries" :key="entry.when + entry.title" class="entry">
           <span class="when">{{ entry.when }}</span>
           <h3>{{ entry.title }}</h3>
           <div class="role">{{ entry.role }}</div>
