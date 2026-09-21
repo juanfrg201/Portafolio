@@ -1,11 +1,16 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { portfolioConfig } from '../data/portfolio.js'
 import portraitSrc from '../assets/portrait.png'
 
-defineProps({
+const props = defineProps({
   t: { type: Object, required: true },
+  lang: { type: String, required: true },
 })
+
+const resume = computed(
+  () => portfolioConfig.links.resume[props.lang] || portfolioConfig.links.resume.en
+)
 
 const portraitOk = ref(false)
 
@@ -42,8 +47,8 @@ function formatPitch(text, boldParts) {
             </a>
             <a
               class="btn btn-outline-light"
-              :href="portfolioConfig.links.resume"
-              download="JF-CV.pdf"
+              :href="resume.href"
+              :download="resume.file"
             >
               {{ t.hero.ctaResume }}
             </a>

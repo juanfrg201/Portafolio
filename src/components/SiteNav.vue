@@ -1,12 +1,16 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { portfolioConfig } from '../data/portfolio.js'
 import { LOCALES } from '../i18n/locales.js'
 
-defineProps({
+const props = defineProps({
   t: { type: Object, required: true },
   lang: { type: String, required: true },
 })
+
+const resume = computed(
+  () => portfolioConfig.links.resume[props.lang] || portfolioConfig.links.resume.en
+)
 
 const emit = defineEmits(['set-lang'])
 
@@ -105,8 +109,8 @@ onUnmounted(() => {
         <a
           class="btn nav-cta"
           :class="isScrolled ? 'btn-primary' : 'btn-light'"
-          :href="portfolioConfig.links.resume"
-          download="JF-CV.pdf"
+          :href="resume.href"
+          :download="resume.file"
         >
           {{ t.nav.cv }}
         </a>

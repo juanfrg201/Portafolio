@@ -20,7 +20,7 @@ useScrollReveal()
 <template>
   <SiteNav :t="t" :lang="lang" @set-lang="setLang" />
   <main>
-    <HeroSection :t="t" />
+    <HeroSection :t="t" :lang="lang" />
     <ProblemsSection :t="t" />
     <AppsSection :t="t" />
     <WorkSection :t="t" />

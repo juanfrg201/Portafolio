@@ -6,7 +6,10 @@ export const portfolioConfig = {
   links: {
     linkedin: 'https://www.linkedin.com/in/jfruizg/',
     github: 'https://github.com/juanfrg2001',
-    resume: '/JF-CV.pdf',
+    resume: {
+      en: { href: '/JF-CV.pdf', file: 'Juan-Felipe-Ruiz-CV-EN.pdf' },
+      es: { href: '/JF-CV-ES.pdf', file: 'Juan-Felipe-Ruiz-CV-ES.pdf' },
+    },
   },
   availability: {
     status: 'available',
